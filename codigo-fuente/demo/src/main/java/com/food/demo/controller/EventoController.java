@@ -1,5 +1,12 @@
 package com.food.demo.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+
 import jakarta.validation.Valid;
 
 import java.util.List;
@@ -14,7 +21,7 @@ import com.food.demo.dto.EventoUpdateDTO;
 import com.food.demo.service.EventoService;
 
 @RestController
-@RequestMapping("/api/v2/eventos")
+@RequestMapping("/api/v3/eventos")
 public class EventoController {
 
     private final EventoService service;

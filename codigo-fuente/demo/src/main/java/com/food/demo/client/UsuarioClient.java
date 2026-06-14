@@ -12,6 +12,6 @@ import com.food.demo.dto.UsuarioDTO;
 )
 public interface UsuarioClient {
 
-    @GetMapping("/api/v2/usuarios/{id}")
+    @GetMapping("/api/v3/usuarios/{id}")
     UsuarioDTO obtenerUsuarioPorId(@PathVariable("id") Long id);
 }
