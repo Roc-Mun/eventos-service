@@ -6,41 +6,31 @@ Microservicio encargado de administrar eventos gastronómicos dentro de ReadySta
 
 ## Funcionalidades
 
-- Crear eventos
-
-- Listar eventos
-
-- Buscar evento por ID
-
-- Actualizar evento
-
-- Publicar evento
-
-- Iniciar evento
-
-- Finalizar evento
-
-- Consultar eventos disponibles
-
-- Comunicación con microservicio de usuarios
+* Crear eventos
+* Listar eventos
+* Buscar evento por ID
+* Actualizar evento
+* Publicar evento
+* Iniciar evento
+* Finalizar evento
+* Consultar eventos disponibles
+* Comunicación con microservicio de usuarios
 
 ## Tecnologías utilizadas
 
-- Java 21
-
-- Spring Boot
-
-- Spring Data JPA
-
-- Spring Validation
-
-- MySQL
-
-- Maven
-
-- Docker
-
-- Docker Compose
+* Java 21
+* Spring Boot
+* Spring Data JPA
+* Spring Validation
+* Spring Cloud OpenFeign
+* Springdoc OpenAPI (Swagger)
+* MySQL
+* H2 Database (Testing)
+* JUnit 5
+* Mockito
+* Maven
+* Docker
+* Docker Compose
 
 ## Ejecución del proyecto
 
@@ -48,42 +38,68 @@ Microservicio encargado de administrar eventos gastronómicos dentro de ReadySta
 docker compose up -d
 ```
 
+## Ejecución de pruebas
+
+```bash
+mvn test
+```
+
+## Swagger
+
+Disponible en:
+
+```text
+http://localhost:8082/doc/swagger-ui.html
+```
+
 ## Endpoints principales
 
--Obtener eventos
+### Obtener eventos
 
-GET /api/v2/eventos
+GET /api/v3/eventos
 
--Obtener evento por ID
+### Obtener evento por ID
 
-GET /api/v2/eventos/{id}
+GET /api/v3/eventos/{id}
 
--Crear evento
+### Crear evento
 
-POST /api/v2/eventos
+POST /api/v3/eventos
 
--Actualizar evento
+### Actualizar evento
 
-PUT /api/v2/eventos/{id}
+PUT /api/v3/eventos/{id}
 
--Publicar evento
+### Publicar evento
 
-PATCH /api/v2/eventos/{id}/publicar
+PUT /api/v3/eventos/{id}/publicar
 
--Iniciar evento
+### Iniciar evento
 
-PATCH /api/v2/eventos/{id}/iniciar
+PUT /api/v3/eventos/{id}/iniciar
 
--Finalizar evento
+### Finalizar evento
 
-PATCH /api/v2/eventos/{id}/finalizar
+PUT /api/v3/eventos/{id}/finalizar
+
+### Eventos disponibles
+
+GET /api/v3/eventos/disponibles
+
+## Testing
+
+El proyecto incluye pruebas unitarias para las capas:
+
+* Modelo
+* Servicio
+* Repositorio
+* Controlador
+
+Todas las pruebas deben finalizar con BUILD SUCCESS.
 
 ## Validaciones
 
--Validación de estados del evento
-
--Validación de fechas
-
--Validación de organizador existente
-
--Manejo global de errores con Bean Validation
+* Validación de estados del evento
+* Validación de fechas
+* Validación de organizador existente
+* Manejo global de errores con Bean Validation
