@@ -1,7 +1,3 @@
-
-## `Entorno-Modulo2/TESTING_PLAN.md`
-
-```markdown
 # TESTING_PLAN.md — Microservicio Eventos
 
 ## Pruebas Unitarias y Cobertura de Reglas de Negocio
